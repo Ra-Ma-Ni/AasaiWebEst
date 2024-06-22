@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill || Pad</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .table thead th {
+            color: #0e2433;
+        }
+        .table-responsive {
+            margin-top: 20px;
+        }
+        .form-control, .btn {
+            border-radius: 5px;
+        }
+        .btn-warning {
+            background-color: #ffff00;
+            color: #343a40;
+            border: none;
+        }
+        body{
+            background-color: royalblue;
+        }
+
+        table {
+            background-color: aliceblue;
+
+        }
+    </style>
+</head>
+<body>
+            <h3 id="Others_order">Other type of Orders </h3><br>
+    <div class="container">
+        <div class="table-responsive">
+            <!--table >
+                        <tr >
+                                <th colspan="2">Other Orders </th>
+                        </tr>
+                        <tr>
+            
+                            <td>No of Copies</td>
+                            <td><input type="text" id="other_cps" ></td>	
+                        </tr>
+                        <tr>
+                            <td>Order Details</td>
+                            <td><input type="text" id="other_dtl" ></td>	
+                        </tr>
+                        <tr>
+                            <td>Total amount</td>
+                            <td><input type="text" id="other_amt" ></td>	
+                        </tr>
+                        <tr>
+                            <td>Order Status </td>
+                            <td><select  id="Other_Status" >
+                                <option value="New_Order">New</option>
+                                <option value="In_Proff">Proff Checking</option>
+                                <option value="In_Binding">Binding</option>
+                                <option value="In_Printing">Printing</option>
+                                <option value="In_Delivery">Delivery</option>
+                                <option value="Completed_Order">Completed</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr><td><input type="submit" onclick="other_cart()"></td></tr>
+            
+            </table>
+            <br-->
+            <table class="table table-bordered">
+                <tr >
+                    <th colspan="2">Flex </th>
+                </tr>
+                
+                    <tr class="thead-dark">
+                        <th><input type="submit" onclick="flex_rate()" class="btn btn-warning" Value="Get--Notice--Rate" style=" background:Red; color:white; border:0px none"></th>
+                        <th>Rs. <input type="text" id="flex_rr" style="border-radius:10px ; border-color:rgba(0,0,0,0); background-color:rgba(0,0,0,0); color:white;" ></th>
+                    <tr>    
+                      
+                        
+                        <tr>
+            
+                            <td>No of Copies</td>
+                            <td><input type="text" id="flex_cps" ></td>	
+                        </tr>
+                        <tr>
+                            <td>Length (in inch)</td>
+                            <td><input type="text" id="flex_l" ></td>	
+                        </tr>
+                        <tr>
+                            <td>Width (in inch)</td>
+                            <td><input type="text" id="flex_w" ></td>	
+                        </tr>
+                        
+                        <tr>
+                            <td>Quality </td>
+                            <td><select  id="flex_qua">
+                                <option value="38">Normal</option>
+                                <option value="55">Start</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!--tr><td><input type="submit" onclick="flex_rate()" value="get Rate"></td><td><input type="submit" onclick="flex_cart()" value="Place Order"></td></tr>
+                        <tr><td>Rate -</td><td><input type="text" id="flex_rr" ></td></tr-->
+            
+            </table>
+            
+            
+            
+            
+            <!--div>
+                <h3 id="Others_order">Other type of Order </h3><br>
+                <h5 style="color:yellow">Click this to book other type of orders  <input type="submit" onclick="Other_order()" Value="Book other order" style="border-radius:5px; height:60px; background:#00FF00; color:#111e63; border:0px none"> </h5>
+            </div-->
+        </div>
+    </div>
+
+<script src="A_Calc.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill || Pad</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .table thead th {
+            color: #0e2433;
+        }
+        .table-responsive {
+            margin-top: 20px;
+        }
+        .form-control, .btn {
+            border-radius: 5px;
+        }
+        .btn-warning {
+            background-color: #ffff00;
+            color: #343a40;
+            border: none;
+        }
+        body{
+            background-color: royalblue;
+        }
+
+        table {
+            background-color: aliceblue;
+
+        }
+    </style>
+</head>
+<body>		
+            <h3 id="Notices" >Notices </h3>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th><input type="submit" onclick="noticerate()" class="btn btn-warning" Value="Get--Notice--Rate" style=" background:Red; color:white; border:0px none"></th>
+                        <th>Rs. <input type="text" id="result_ntsi" style="border-radius:10px ; border-color:rgba(0,0,0,0); background-color:rgba(0,0,0,0); color:white;" ></th>
+                    <tr>    
+                </thead>
+    
+                <tr>
+                            <td>No of Copies</td> 
+                            <td><input type ="text" id="TotalCopy_nts" required autofocus ></td>
+                </tr>
+                <tr>
+                            <td>Side</td>
+                            <td><select name="Printing_side_nts" id="Printing_side_nts" >
+                                <option value="1">Single Side</option>
+                                <option value="2">Double Side</option>
+                                </select>
+                                </td>
+                </tr>
+                <tr>
+                            <td>No of colour</td>
+                            <td><select name="No_of_color_nts" id="No_of_color_nts" >
+                                <option value="1">Single Colour</option>
+                                <option value="2">Double Colour</option>
+                                </select>
+                            </td>
+                </tr>
+                <tr>
+                            <td>List colour</td>
+                            <td>
+                            1-<select name="List_color_nts1" id="list_color_nts1" >
+                                <option value="">1st Colour</option>
+                                <option value="Royal_Blue">Royal Blue</option>
+                                <option value="Brown">Brown</option>
+                                <option value="Red">Red</option>
+                                <option value="Green">Green</option>
+                                <option value="Pecka_Blue">Pecka Blue</option>
+                                <option value="Other_Colour">Other Colour</option>
+                                </select>
+                            2-<select name="List_color_nts2" id="list_color_nts2" >
+                                <option value="">2nd Colour</option>
+                                <option value="Royal_Blue">Royal Blue</option>
+                                <option value="Brown">Brown</option>
+                                <option value="Red">Red</option>
+                                <option value="Green">Green</option>
+                                <option value="Pecka_Blue">Pecka Blue</option>
+                                <option value="Other_Colour">Other Colour</option>
+                                </select>
+                            </td>
+                </tr>
+    
+                <tr>
+                            <td>Size of the Notice...</td>
+                            <td><select name="Paper_size_nts" id="Paper_size_nts" >
+                                <option value="4">A4</option>
+                                <option value="3">Legal</option>
+                                <option value="8">[1/8]</option>
+                                <option value="16">[1/16]</option> 
+                                <option value="22">[1/22]</option> 
+                                <option value="1">A3</option> // correct aa theria
+                  <option value="5">[1/5]</option> 
+                                <option value="10">[1/10]</option>
+                            </select></td>
+                </tr>
+                <tr>
+                            <td>Notice Paper Quality </td>
+                            <td><select name="PaperQuality_nts" id="PaperQuality_nts" >
+                                <option value="50">8 Kg/w</option>
+                                <option value="45">6 Kg/w</option>
+                                <option value="75">18.6 Kg/w</option>
+                                <option value="0.5">A4 65 Gsm papers</option>// chages per paper - bundle rate / no of paper in bundel
+                                <option value="0.54">A4 70 Gsm papers</option>
+                                <option value="0.58">A4 75 Gsm papers</option>
+                                <option value="0.6">A4 80 Gsm papers</option>
+                                <option value="0.7">A4 100 Gsm papers</option>
+                                <option value="0.7">Legal 70 Gsm papers</option>
+                                <option value="0.76">Leagl 80 Gsm papers</option>
+                                <option value="1">A3 80 Gsm papers</option>
+                                <option value="1.16">A3 90 Gsm papers</option>
+                                <option value="1.2">Bond Paper</option>
+                                <option value="2">Multicolor Art paper</option>
+                                <option value="8">10 kg Board</option>
+                                
+                                
+                            </select>
+                            </td>
+                </tr>
+                <tr>
+                            
+                            <td><input type="reset" value="Reset or Next Calc.." style="radius:5px; background:#ffff00; color:#343a40; border:0px none; border-radius:5px"></td>
+                            <td><input type="checkbox" id="a_gst_nts">Add GST</td>
+                </tr>
+                <tr>
+                            <td>Item descripiton</td>
+                            <td><input type="text" id="des_nts" placeholder="Notes....."></td>	
+                </tr>
+                
+            </table>
+            
+            <!--<input type="submit" onclick="noticerate()" Value="Get--Nts--Rate" style="border-radius:15px;height:40px;">-->
+            
+            
+            <!--New br>
+            <table><tr>
+            <td><input type="submit" onclick="noticerate()" Value="Get--Notice--Rate" style=" background:#111e63; color:white; border:0px none"></td>
+            <td><i class="fa fa-inr"></i><input type="text" id="result_ntsi" style="height:50px; border-radius:5px;background-color:rgba(0,0,0,0);" ></td>
+            <td><input type="submit" onclick="nts_cart()" Value="Add to Cart" style=""> <i class="fa fa-cart-plus"></i></td>
+            </tr></table>
+            <h2><div id="result_nts"></div></h2-->
+            
+            <!--input type="submit" onclick="noticerate()" Value="Get--Notice--Rate" style="border-radius:5px; height:40px; background:#111e63; color:white; border:0px none">
+            <h2><div id="result_nts"></div></h2>
+            
+            <div>
+                <input type="text" id="result_ntsi" style="height:60px; border-radius:5px" >
+                <input type="submit" onclick="nts_order()" Value="Book this order" style="border-radius:5px; height:60px; background:#00FF00; color:#111e63; border:0px none">
+            </div-->
+        </div>
+    </div>    
+
+<script src="A_Calc.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

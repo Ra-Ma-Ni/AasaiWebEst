@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill || Pad</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            
+            background-color: #4169E1;
+    }
+        table {
+            background-color: aliceblue;
+        }
+        .table thead th {
+            color: #0e2433;
+        }
+        .table-responsive {
+            margin-top: 20px;
+        }
+        .form-control, .btn {
+            border-radius: 5px;
+        }
+        .btn-warning {
+            background-color: #ffff00;
+            color: #343a40;
+            border: none;
+        }
+
+    </style>   
+</head>
+<body>
+    <h3 id="Bill Book" >Bill Book & Letter Pad & Related items  </h3>
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th><button type="submit" class="btn btn-warning" onclick="billbookrate()" Value="" style=" background:#ed0505; align:center;color:white; border-radius:10px ;">Get Est/</button></th>
+		            <th>Rs. <input type="text" id="result_bill" style="border-radius:10px ; border-color:rgba(0,0,0,0); background-color:rgba(0,0,0,0); color:white;" ></th>
+                <tr>    
+            </thead>
+            <tbody>
+                <tr>
+                    <td>No of books</td>
+                    <td><input type="text" id="TotalBook" class="form-control" required autofocus></td>
+                </tr>
+                <tr>
+                    <td>Main Copy Paper Quality</td>
+                    <td>
+                        <select name="Main_paperQuality" id="Main_paperQuality" class="form-control">
+                            <option value="50">8 Kg/w</option>
+                            <option value="45">6 Kg/w</option>
+                            <option value="75">18.6 Kg/w</option>
+                            <option value="0.5">A4 65 Gsm papers</option>
+                            <option value="0.54">A4 70 Gsm papers</option>
+                            <option value="0.58">A4 75 Gsm papers</option>
+                            <option value="0.6">A4 80 Gsm papers</option>
+                            <option value="0.7">A4 100 Gsm papers</option>
+                            <option value="0.7">Legal 70 Gsm papers</option>
+                            <option value="0.76">Legal 80 Gsm papers</option>
+                            <option value="1">A3 80 Gsm papers</option>
+                            <option value="1.16">A3 90 Gsm papers</option>
+                            <option value="1.2">Bond Paper</option>
+                            <option value="2">Multicolor Art paper</option>
+                            <option value="8">10 kg Board</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Book Paper set</td>
+                    <td>
+                        <div class="form-check">
+                            <input type="radio" value="100" id="pset" name="a" class="form-check-input">
+                            <label class="form-check-label" for="pset">100 Set per/book</label><br>
+                            <input type="radio" value="50" id="p1set" name="a" class="form-check-input">
+                            <label class="form-check-label" for="p1set">50 Set per/book</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>No Of Additional Copies 1+</td>
+                    <td>
+                        <select name="No_add_copy" id="No_add_copy" class="form-control">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Additional Copy Paper Quality</td>
+                    <td>
+                        <select name="Add_paperQuality" id="Add_paperQuality" class="form-control">
+                            <option value="50">8 Kg/w</option>
+                            <option value="45">6 Kg/w</option>
+                            <option value="75">18.6 Kg/w</option>
+                            <option value="0.5">A4 65 Gsm papers</option>
+                            <option value="0.54">A4 70 Gsm papers</option>
+                            <option value="0.58">A4 75 Gsm papers</option>
+                            <option value="0.6">A4 80 Gsm papers</option>
+                            <option value="0.7">A4 100 Gsm papers</option>
+                            <option value="0.7">Legal 70 Gsm papers</option>
+                            <option value="0.76">Legal 80 Gsm papers</option>
+                            <option value="1">A3 80 Gsm papers</option>
+                            <option value="1.16">A3 90 Gsm papers</option>
+                            <option value="1.2">Bond Paper</option>
+                            <option value="2">Multicolor Art paper</option>
+                            <option value="8">10 kg Board</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Size of the Book</td>
+                    <td>
+                        <select name="Paper_size" id="Paper_size" class="form-control">
+                            <option value="4">A4</option>
+                            <option value="3">Legal</option>
+                            <option value="8">[1/8]</option>
+                            <option value="16">[1/16]</option>
+                            <option value="22">[1/22]</option>
+                            <option value="1">A3</option>
+                            <option value="5">[1/5]</option>
+                            <option value="10">[1/10]</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Side</td>
+                    <td>
+                        <select name="Printing_side_bill" id="Printing_side_bill" class="form-control">
+                            <option value="1">Single Side</option>
+                            <option value="2">Double Side</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>No of colour</td>
+                    <td>
+                        <select name="No_of_color_bill" id="No_of_color_bill" class="form-control">
+                            <option value="1">Single Colour</option>
+                            <option value="2">Double Colour</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>List colour</td>
+                    <td>
+                        1-<select name="List_color_bill1" id="list_color_bill1" class="form-control">
+                            <option value="">1st Colour</option>
+                            <option value="Royal_Blue">Royal Blue</option>
+                            <option value="Brown">Brown</option>
+                            <option value="Red">Red</option>
+                            <option value="Green">Green</option>
+                            <option value="Pecka_Blue">Pecka Blue</option>
+                            <option value="Other_Colour">Other Colour</option>
+                        </select>
+                        2-<select name="List_color_bill2" id="list_color_bill2" class="form-control">
+                            <option value="">2nd Colour</option>
+                            <option value="Royal_Blue">Royal Blue</option>
+                            <option value="Brown">Brown</option>
+                            <option value="Red">Red</option>
+                            <option value="Green">Green</option>
+                            <option value="Pecka_Blue">Pecka Blue</option>
+                            <option value="Other_Colour">Other Colour</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <div class="form-check">
+                            <input type="radio" id="letterpad" name="b" class="form-check-input">
+                            <label class="form-check-label" for="letterpad">If Letter Pad (click here)</label><br>
+                            <input type="radio" id="Nobinding" name="b" class="form-check-input">
+                            <label class="form-check-label" for="Nobinding">No Binding wanted</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><button type="reset" class="btn btn-warning">Reset or Next Calc..</button></td>
+                    <td>
+                        <div class="form-check">
+                            <input type="checkbox" id="a_gst_billbk" class="form-check-input">
+                            <label class="form-check-label" for="a_gst_billbk">Add GST</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Item description</td>
+                    <td><input type="text" id="des_billbk" class="form-control" placeholder="Notes....."></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+		<!-- New table><tr>
+		<td><input type="submit" onclick="billbookrate()" Value="Get Rate" style=" background:#111e63; color:white; border:0px none ;"></td>
+		<td><i class="fa fa-inr"></i>  <input type="text" id="result_bill" style="height:50px; border-radius:5px align:center; background-color:rgba(0,0,0,0);" ></td>
+		<td><input type="submit" onclick="bill_cart()" Value="Add to Cart" style=""> <i class="fa fa-cart-plus"></i></td>
+		</tr></table-->
+
+    </div>
+</div>
+<script src="A_Calc.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

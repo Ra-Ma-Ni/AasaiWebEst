@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill || Pad</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .table thead th {
+            color: #0e2433;
+            text-align: center;
+        }
+        .table-responsive {
+            margin-top: 20px;
+        }
+        .form-control, .btn {
+            border-radius: 5px;
+        }
+        .btn-warning {
+            background-color: #ffff00;
+            color: #343a40;
+            border: none;
+        }
+
+        body{
+            background-color: royalblue;
+        }
+
+        table {
+            background-color: aliceblue;
+
+        }
+    </style>
+</head>
+<body>  
+        <h3 id="Visting Card">Visting Card & Bindings </h3>
+    <div class="container">
+        <div class="table-responsive">    
+            <form><table id="vc_table" class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th colspan="5">Rs. <input type="text" id="result_vc_i" style="border-radius:10px ; border-color:rgba(0,0,0,0); background-color:rgba(0,0,0,0); color:white;" ></th>
+                    <tr>    
+                </thead>
+                <tr>
+                    
+                    <th>Item</th>
+                    <th>Quantiy</th>
+                    <th>Type</th>
+                    <th>Price in Rs</th>
+                    <th>Qty Needs</th>
+                    
+                </tr>
+                
+                <tr>
+                    <td >Gloosy </td><td>F&B </td><td>1000 </td>
+                    <td id="vc1c">850 </td><td><input type="number" id="vc1n" min="0" max="10" onchange="vistingcardrate()" value=0 > </td>
+                </tr>
+                
+                <tr>
+                    <td >Gloosy </td><td>F&B </td><td>500  </td>
+                    <td id="vc2c">700 </td><td><input type="number" id="vc2n" min="0" max="10" onchange="vistingcardrate()" value=0 > </td>
+                </tr>
+                
+                <tr>
+                    <td>Gloosy </td><td>Single Side </td><td>1000 </td>
+                    <td id="vc3c">650 </td><td><input type="number" id="vc3n" min="0" max="10" onchange="vistingcardrate()" value=0 > </td>
+                </tr>
+                
+                <tr>
+                    <td>Gloosy </td><td>Single Side </td><td>500  </td>
+                    <td id="vc4c">500 </td><td><input type="number" id="vc4n" min="0" max="10" onchange="vistingcardrate()" value=0 > </td>
+                </tr>
+                
+                <tr>
+                    <td>Synthetic </td><td>F&B </td><td>1000 </td>
+                    <td id="vc5c">1150 </td><td><input type="number" id="vc5n" min="0" max="10" onchange="vistingcardrate()" value=0 > </td>
+                </tr>
+                
+                <tr>
+                    <td>Synthetic </td><td>F&B </td><td>500  </td>
+                    <td id="vc6c">750 </td><td><input type="number" id="vc6n" min="0" max="10" onchange="vistingcardrate()" value=0 > </td>
+                </tr>
+                
+                <tr>
+                    <td>Synthetic </td><td>Single Side </td><td>1000 </td>
+                    <td id="vc7c">950 </td><td><input type="number" id="vc7n" min="0" max="10" onchange="vistingcardrate()" value=0 > </td>
+                </tr>
+                
+                <tr>
+                    <td>Synthetic </td><td>Single Side </td><td>500  </td>
+                    <td id="vc8c">650 </td><td><input type="number" id="vc8n" min="0" max="10" onchange="vistingcardrate()" value=0 > </td>
+                </tr>
+                
+                <tr>
+                    <td>Book Binding </td><td>Stiching Only </td><td>1 </td>
+                    <td id="vc9c">30 </td><td><input type="number" id="vc9n" min="0" max="10" onchange="vistingcardrate()" value=0 > </td>
+                </tr>
+                <tr>
+                    <td>Book Binding </td><td>Stiching With Sheet </td><td>1 Book  </td>
+                    <td id="vc10c">40 </td><td><input type="number" id="vc10n" min="0" max="10" onchange="vistingcardrate()" value=0 > </td>
+                </tr>
+                <tr>
+                    <td>Book Binding </td><td>Normal/Atta  </td><td>1 Book  </td>
+                    <td id="vc11c">60 </td><td><input type="number" id="vc11n" min="0" max="10" onchange="vistingcardrate()" value=0 > </td>
+                </tr>
+                <tr>
+                    <td>Book Binding </td><td>Rexin </td><td>1 Book </td>
+                    <td id="vc12c">90 </td><td><input type="number" id="vc12n" min="0" max="10" onchange="vistingcardrate()" value=0 > </td>
+                </tr>
+                <tr>
+                    <td>Binding </td><td>Chalan Book </td><td>1 Book </td>
+                    <td id="vc13c">40 </td><td><input type="number" id="vc13n" min="0" max="10" onchange="vistingcardrate()" value=0 > </td>
+                </tr>
+                <tr>
+                    <td>Binding </td><td>Check Book </td><td>1 Book </td>
+                    <td id="vc14c">100 </td><td><input type="number" id="vc14n" min="0" max="10" onchange="vistingcardrate()" value=0 > </td>
+                </tr>
+
+                <tr>
+                            <td><input type="reset" value="Reset or Next Calc.." style="radius:5px; background:#ffff00; color:#343a40; border:0px none; border-radius:5px"></td>
+                            <td><input type="checkbox" id="a_gst_vc" onchange="vistingcardrate()">Add GST</td>
+                </tr>
+                <tr>
+                            <td>Item descripiton</td>
+                            <td><input type="text" id="des_vc" placeholder="Notes....."></td>	
+                </tr>
+                
+            </table></form>
+            
+            <!-- New br>
+            <table><tr>
+            <td><i class="fa fa-inr"></i><input type="text" id="result_vc_i" style="height:50px; border-radius:5px align:center;background-color:rgba(0,0,0,0);" ></td>
+            <td><input type="submit" onclick="vc_cart()" Value="Add to Cart" style=""> <i class="fa fa-cart-plus"></i></td>
+            </tr></table>
+            <h2><div id="result_vc"></div></h2-->
+            
+            <!--div>
+                <input type="text" id="result_vc_i" style="height:60px; border-radius:5px align:center;" >
+                <input type="submit" onclick="Vistingcard_order()" Value="Book this order" style="border-radius:5px; height:60px; background:#00FF00; color:#111e63; border:0px none">
+            </div-->
+        </div>
+    </div>
+
+<script src="A_Calc.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
