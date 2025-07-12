@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QR Code Generator</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 2em;
+      background: #f4f4f4;
+    }
+
+    input[type="text"], select {
+      width: 300px;
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    label {
+      margin: 10px;
+      display: block;
+    }
+
+    #qrcode-wrapper {
+      margin-top: 20px;
+      padding: 10px;
+      display: inline-block;
+    }
+
+    .color-picker {
+      margin: 10px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+
+    #downloadBtn {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>QR Code Generator</h1>
+  <input type="text" id="text" placeholder="Enter text or URL" />
+
+  <div class="color-picker">
+    <label>
+      Foreground Color:
+      <input type="color" id="fgColor" value="#000000" />
+    </label>
+    <label>
+      Background Color:
+      <input type="color" id="bgColor" value="#ffffff" />
+    </label>
+    <label>
+      Download Format:
+      <select id="imgFormat">
+        <option value="png">PNG</option>
+        <option value="jpeg">JPEG</option>
+      </select>
+    </label>
+  </div>
+  <br>
+  <button onclick="generateQRCode()">Generate QR Code</button>
+  <br>
+  <button id="downloadBtn" onclick="downloadQRCode()">Download QR Code</button>
+  <br>
+  <div id="qrcode-wrapper">
+    <div id="qrcode"></div>
+  </div>
+
+  <script>
+    function generateQRCode() {
+      const text = document.getElementById('text').value;
+      const fgColor = document.getElementById('fgColor').value;
+      const bgColor = document.getElementById('bgColor').value;
+
+      // Clear previous QR code
+      document.getElementById('qrcode').innerHTML = "";
+
+      // Generate new QR code
+      new QRCode(document.getElementById("qrcode"), {
+        text: text,
+        width: 256,
+        height: 256,
+        colorDark: fgColor,
+        colorLight: bgColor,
+        correctLevel: QRCode.CorrectLevel.H
+      });
+
+      setTimeout(() => {
+        document.getElementById('downloadBtn').style.display = 'inline-block';
+      }, 300);
+    }
+
+    function downloadQRCode() {
+      const qrImg = document.querySelector('#qrcode img');
+      const format = document.getElementById('imgFormat').value;
+      const bgColor = document.getElementById('bgColor').value;
+
+      if (!qrImg) {
+        alert('QR code not found or not rendered yet.');
+        return;
+      }
+
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+
+      const img = new Image();
+      img.crossOrigin = 'Anonymous';
+      img.onload = function () {
+        canvas.width = img.width;
+        canvas.height = img.height;
+
+        // Solid background color
+        ctx.fillStyle = bgColor;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.drawImage(img, 0, 0);
+
+        const link = document.createElement('a');
+        link.href = canvas.toDataURL(`image/${format}`);
+        link.download = `qr-code.${format}`;
+        link.click();
+      };
+      img.src = qrImg.src;
+    }
+  </script>
+</body>
+</html>
